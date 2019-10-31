@@ -29,6 +29,7 @@ public class JdbcRelamTest {
 		String sql = "select password from test_user where user_name = ?";
 		jdbcRelam.setAuthenticationQuery(sql);//执行自己的查询语句
 		
+		
 		//1.构建SecurityManager环境
 		DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
 		defaultSecurityManager.setRealm(jdbcRelam);

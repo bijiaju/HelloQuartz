@@ -8,10 +8,20 @@ import org.apache.shiro.subject.Subject;
 import org.junit.Before;
 import org.junit.Test;
 
+
+/**
+ *  shrio认证测试
+ * @author bee
+ *
+ */
 public class AuthencationTest {
 	
-	 SimpleAccountRealm simpleAccountRealm =new  SimpleAccountRealm();
+	 SimpleAccountRealm simpleAccountRealm =new  SimpleAccountRealm();//为了做演示，使用了simpleRealm  后续会使用jdbcRealm
+	// JdbcRealm realm = new JdbcRealm();
 	
+	 /**
+	  * 添加账户，到时候可以加载数据库
+	  */
 	@Before
 	public void addUser(){
 		simpleAccountRealm.addAccount("bee", "123456","admin");//提前注册一个账户
@@ -21,7 +31,7 @@ public class AuthencationTest {
 	public void testAuthencationTest(){
 		//1.构建SecurityManager环境
 		DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
-		defaultSecurityManager.setRealm(simpleAccountRealm);
+		defaultSecurityManager.setRealm(simpleAccountRealm);//设置realm
 		
 		//2.主体提交认证请求
 		SecurityUtils.setSecurityManager(defaultSecurityManager);

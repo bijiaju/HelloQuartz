@@ -7,7 +7,11 @@ import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.realm.text.IniRealm;
 import org.apache.shiro.subject.Subject;
 import org.junit.Test;
-
+/**
+ * 测试不同数据源
+ * @author bee
+ *
+ */
 public class IniRealmTest {
 	
 	
